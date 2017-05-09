@@ -53,13 +53,15 @@ Dependencies
 py-udownloader depend on third party libraries
 * urrlib
 
-Comman-Line Example
+Command-Line Example
 -------------------
     $ 'usage: %s [-c city] [-a accesstoken] [-n notify] [-h help]'
     
     "city: name of the city"
     "accesstoken: You need to get access token by registering on http://aqicn.org/data-platform/register/"
     "notify: True or False- show the notification tray on linux"
+    
+    * ./py-hawa -c cityname -a accesstoken -n TRUE
 AQI Guide
 ---------
 * http://aqicn.org/faq/2015-09-06/ozone-aqi-using-concentrations-in-milligrams-or-ppb/
