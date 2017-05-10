@@ -29,6 +29,7 @@ def main(argv):
 	city = 'shanghai'
 	accesstoken = 'demo'
 	notify = ''
+	sendTrayNotification = None
 
 	for (k, v) in opts:
 		if k == '-c': 
@@ -38,10 +39,10 @@ def main(argv):
 			accesstoken = v
 
 		elif k == '-n': 
-			if notify != True and notify != False:
+			if v!= True and v != False:
 				return help()
 			else:
-				notify = v
+				sendTrayNotification = v
 
 		elif k == '-h' : return help()
 
@@ -82,12 +83,14 @@ def main(argv):
 			print ("Air Quality Alert:" "Current Value: Hazardous -  " + toDisplay)
 
 	else:
-		if notify:
-			notify = 'notify-send "Error: " "Unable to Connect"'
+		notify = 'notify-send "Error: " "Unable to Connect"'
 		print ('Error: Unable to connect to server')
 
-	if notify:
+	if sendTrayNotification:
 		os.system(notify)
+	else:
+		print ('[Debug] Tray Notification is off.')
+
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv))
